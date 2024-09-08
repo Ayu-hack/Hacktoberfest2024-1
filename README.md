@@ -1,4 +1,4 @@
-## Hacktoberfest 2024 Contributions Welcome!
+### Hacktoberfest 2024 Contributions Welcome!
 
 This repository is designed to help you easily contribute to open source and participate in Hacktoberfest 2024. We welcome all pull requests, and genuine contributions will be promoted!
 
