@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 # flashcard_quiz.py
 def flashcard_quiz(flashcards):
     score = 0
