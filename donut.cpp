@@ -33,7 +33,7 @@ int main() {
                 int N = 8 * ((f * e - c * d * g) * m - c * d * e - f * g - l * d * n);
                 if(22 > y && y > 0 && x > 0 && 80 > x && D > z[o]) {
                     z[o] = D;
-                    b[o] = "...,,,ooo000"[N > 0 ? N : 0]; //works much better with ".,-~:;=!*#$@" or "JackEatDonut"
+                    b[o] = ".,-~:;=!*#$@"[N > 0 ? N : 0]; //works much better with ".,-~:;=!*#$@" or "JackEatDonut"
                 }
             }
         }
