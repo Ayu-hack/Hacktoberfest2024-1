@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import random
 
 HANGMAN_PICS = [
@@ -128,7 +122,7 @@ if __name__ == "__main__":
             break
 
 
-# In[ ]:
+
 
 
 
