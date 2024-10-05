@@ -4,7 +4,7 @@ using namespace std;
 class arr_stack
 {
     private :
-           int capacity , top ,*ptr;
+               int capacity , top ,*ptr;
 
     public :
            arr_stack();
