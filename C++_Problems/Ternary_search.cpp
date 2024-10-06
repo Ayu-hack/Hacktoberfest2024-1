@@ -46,8 +46,14 @@ int ternarySearch(int arr[], int l, int r, int key)
 int main()
 {
     int n = 10;
-    int arr[] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
-    int key = 13;
+    cin>>n;
+
+    int arr[n];
+    for (int i = 0; i < n; i++){
+        cin >> arr[i];
+    }
+    int key;
+    cin >> key;
 
     int result = ternarySearch(arr, 0, n - 1, key);
 
