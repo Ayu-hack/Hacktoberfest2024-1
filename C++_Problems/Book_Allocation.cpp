@@ -65,8 +65,15 @@ int booksAllocate(vector<int> &A, int B)
 
 int main()
 {
-    vector<int> A = {12, 34, 67, 90}; // Example input
-    int B = 2;                        // Number of students
-    cout << booksAllocate(A, B);      // Should output 113 (minimum of maximum pages)
+    int n;
+    cin >> n;
+    vector<int> A(n);
+    for (int i = 0; i<n; i++){
+        cin >> A[i];
+    }
+
+    int B; // Number of students
+    cin >> B;
+    cout << booksAllocate(A, B); //  (minimum of maximum pages)
     return 0;
 }
