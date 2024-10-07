@@ -1,4 +1,4 @@
-## Please consider contributing to this repo: https://github.com/Ayu-hack/Hacktoberfest2024
+## Please consider contributing to this repo: [https://github.com/Ayu-hack/Hacktoberfest2024](https://github.com/Ayu-hack/GeeksforGeeks-POTD-Solution)
 ## **Sorry for the inconvenience, and thank you for your understanding! 🙏**
 
 
