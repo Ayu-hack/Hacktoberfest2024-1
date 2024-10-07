@@ -1,0 +1,42 @@
+What is Recursion?
+
+Recursion is a programming technique where a function calls itself to solve a smaller version of a problem. 
+This allows you to break down complex problems into more manageable sub-problems. Each time a recursive function calls itself, 
+it reduces the complexity of the problem, approaching a point where the solution becomes simple.
+
+Recursion is a fundamental programming concept where a function calls itself directly or indirectly. It’s like a process that loops back to itself but with a key difference: 
+rather than looping in the traditional sense, it creates new function calls with each iteration. Each recursive call simplifies the original problem into a smaller or simpler version until a condition, 
+known as the base case, is reached.
+Think of recursion like a set of nested dolls (Matryoshka dolls). Each time you open a larger doll, you find a smaller one inside. 
+You keep opening dolls until you reach the smallest one, which signifies the end of the nesting. 
+Similarly, a recursive function keeps calling itself with smaller inputs until it hits the simplest form of the problem (base case)
+
+Core Concepts of Recursion
+            1.Base Case:
+            2.Recursive Case:
+            3.Call Stack:
+            4.Stack Overflow:
+
+Types of Recursion
+            1.Direct Recursion:
+            2.Indirect Recursion:
+            3.Tail Recursion:
+            4.Non-Tail Recursion:
+
+/**********************************************************************************************************/
+
+
+                        ----When to Use Recursion----
+                            Recursion is ideal when:
+
+            The problem can naturally be divided into smaller sub-problems.
+You are working with structures like trees or graphs, where each node can be processed in a similar way.
+        The problem definition is inherently recursive (e.g., calculating the factorial).
+
+
+                        ----When Not to Use Recursion----
+                Recursion might not be the best choice when:
+
+    The problem is simple and can be solved using a loop with less memory usage.
+            There is a risk of a stack overflow due to deep recursion.
+Performance is a concern, as recursion can add overhead due to multiple function calls.

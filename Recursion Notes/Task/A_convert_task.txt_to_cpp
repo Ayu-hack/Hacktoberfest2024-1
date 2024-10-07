@@ -1,0 +1,8 @@
+Tasks
+Implement Recursive Algorithms:
+*Fibonacci Sequence: Write a recursive function to find the nth Fibonacci number.
+*Factorial Calculation: Create a recursive function to calculate the factorial of a number.
+*Sum of Digits: Develop a recursive function to compute the sum of the digits of a number.
+*Tower of Hanoi: Solve the Tower of Hanoi problem using recursion.
+*Permutations of a String: Generate all permutations of a given string recursively.
+*Power Set: Create a function to generate the power set of a set using recursion.

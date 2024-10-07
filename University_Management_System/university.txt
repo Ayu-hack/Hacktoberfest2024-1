@@ -1,5 +1,0 @@
-
-	220180104016 : Priyanshu : Mechanical : Bhatkot
-	220180104016 : PriyanshuTadhiyal : MechanicalEngineering : Bhatkot
-	220180104016 : PriyanshuTadhiyal : AppliedThermodynamics : Bhatkot,Chaukhutia
-	220180104016 : LeviiAckerMan : MechanicalEngineering : Bombay

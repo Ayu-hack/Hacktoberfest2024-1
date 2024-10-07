@@ -1,0 +1,117 @@
+#include<iostream>
+using namespace std;
+//Here’s how you can implement each of these recursive algorithms in C++:
+
+/*1. Fibonacci Sequence**:
+   - **Problem**: Write a recursive function to find the nth Fibonacci number.
+   - **Recursive Relation**: `F(n) = F(n-1) + F(n-2)` with `F(0) = 0` and `F(1) = 1`.*/
+  int fibonacci(int n) {
+      if (n == 0) return 0;  // Base case
+      if (n == 1) return 1;  // Base case
+      return fibonacci(n - 1) + fibonacci(n - 2);  // Recursive case
+  }
+  
+
+/*2. Factorial Calculation**:
+   - **Problem**: Create a recursive function to calculate the factorial of a number.
+   - **Recursive Relation**: `factorial(n) = n * factorial(n - 1)` with `factorial(0) = 1`.*/
+
+
+  int factorial(int n) {
+      if (n == 0) return 1;  // Base case
+      return n * factorial(n - 1);  // Recursive case
+  }
+  
+
+/*3. Sum of Digits**:
+   - **Problem**: Develop a recursive function to compute the sum of the digits of a number.
+   - **Recursive Relation**: `sumOfDigits(n) = n % 10 + sumOfDigits(n / 10)` with `sumOfDigits(0) = 0`.*/
+
+
+  int sumOfDigits(int n) {
+      if (n == 0) return 0;  // Base case
+      return (n % 10) + sumOfDigits(n / 10);  // Recursive case
+  }
+  
+
+/*4. Tower of Hanoi**:
+   - **Problem**: Solve the Tower of Hanoi problem using recursion for `n` disks.
+   - **Recursive Relation**: Move `n-1` disks from source to auxiliary, move the nth disk to the destination, and then move `n-1` disks from auxiliary to destination.*/
+
+  void towerOfHanoi(int n, char source, char auxiliary, char destination) {
+      if (n == 1) {
+          cout <<"Move disk 1 from " << source << " to " << destination << endl;
+          return;
+      }
+      towerOfHanoi(n - 1, source, destination, auxiliary);  // Move n-1 disks to auxiliary
+      cout << "Move disk " << n << " from " << source << " to " << destination << endl;
+      towerOfHanoi(n - 1, auxiliary, source, destination);  // Move n-1 disks to destination
+   }
+  
+
+/*5. Permutations of a String**:
+   - **Problem**: Generate all permutations of a given string recursively.
+   - **Recursive Relation**: Fix one character and recursively generate permutations of the remaining characters.*/
+
+  void permute(string str, int left, int right) {
+       if (left == right) {
+           cout << str << endl;
+       } else {
+           for (int i = left; i <= right; i++) {
+               swap(str[left], str[i]);  // Fix one character
+               permute(str, left + 1, right);  // Recursively permute the rest
+               swap(str[left], str[i]);  // Backtrack
+           }
+       }
+   }
+  
+
+/*6. Power Set**:
+   - **Problem**: Create a function to generate the power set of a set using recursion.
+   - **Recursive Relation**: For each element, decide whether to include it in the subset or not.*/
+
+   void generatePowerSet(string str, int index = 0, string current = "") {
+       if (index == str.length()) {
+           cout << current << endl;  // Base case: print the subset
+           return;
+       }
+       // Exclude the current character and move to the next
+       generatePowerSet(str, index + 1, current);
+       // Include the current character and move to the next
+       generatePowerSet(str, index + 1, current + str[index]);
+   }
+  
+
+/*** ge and Example Calls**:
+
+- **Fibonacci Sequence**:*/
+
+  cout << "5th Fibonacci number: " << fibonacci(5) << endl;
+ 
+
+//- **Factorial Calculation**:
+
+  cout << "Factorial of 5: " << factorial(5) << endl;
+ 
+
+// **Sum of Digits**:
+
+  cout << "Sum of digits of 1234: " << sumOfDigits(1234) << endl;
+ 
+
+// **Tower of Hanoi**:
+
+  towerOfHanoi(3, 'A', 'B', 'C');  // Move 3 disks from A to C using B
+ 
+
+// **Permutations of a String**:
+
+  string str = "ABC";
+  permute(str, 0, str.length() - 1);
+ 
+
+// **Power Set**:
+
+  generatePowerSet("ABC");
+ 
+

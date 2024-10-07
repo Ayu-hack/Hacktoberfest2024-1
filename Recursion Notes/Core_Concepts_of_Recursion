@@ -1,0 +1,74 @@
+Core Concepts of Recursion
+
+# 1. **Base Case**:
+   - **Definition**: The base case is a condition in a recursive function that stops the recursion. It provides a simple, non-recursive solution to a problem.
+   - **Why It’s Critical**: 
+    - Without a base case, the recursion would go on infinitely, leading to a *stack overflow*.This happens because each function call uses some memory, and without a stopping point,memory usage grows until it exceeds the available space.
+    - The base case should be simple enough that its solution is directly known or can be calculated without further recursion.
+   - **Example**: 
+    - In calculating the factorial of a number \( n \), \( 0! = 1 \) is a natural base case because the definition of a factorial operation ends at \( 0 \). This prevents further calls when \( n \) is decremented down to \( 0 \).
+
+    ```cpp
+    int factorial(int n) {
+        if (n == 0) {
+            return 1;  // Base case: 0! is 1
+        }
+        return n * factorial(n - 1);  // Recursive call
+    }
+    ```
+
+# 2. **Recursive Case**:
+   - **Definition**: This is the part where the function calls itself with modified arguments. The purpose is to break the larger problem into smaller instances of the same problem.
+  - **Why It’s Important**: 
+    - The recursive case works to bring the problem closer to the base case. With each recursive call, the input size should get smaller (or more manageable) until it reaches the condition specified in the base case.
+    - A well-designed recursive function will ensure that the problem size diminishes with each call, guaranteeing that the base case will eventually be reached.
+  - **Example**: 
+    - In a factorial function, the recursive case is `n * factorial(n - 1)`. Each call reduces \( n \) by 1 until \( n \) reaches 0:
+
+    ```cpp
+    int factorial(int n) {
+        if (n == 0) {
+            return 1;
+        }
+        return n * factorial(n - 1);  // n gets smaller with each call
+    }
+     ```
+
+# 3. **Call Stack**:
+  - **Definition**: A call stack is a data structure that the system uses to keep track of function calls. It stores information about each function call, such as parameters, local variables, and the return address.
+  - **How It Works in Recursion**: 
+    - When a recursive function is called, a new *stack frame* is created for each call, containing the function’s parameters and local variables.
+    - As the recursion unfolds, each function call adds a new frame to the stack. When the base case is reached, the functions start returning, and the frames are popped off the stack one by one.
+    - This means that recursive functions consume memory for each call, making them potentially more memory-intensive than iterative solutions for large problems.
+  - **Visualizing the Call Stack**: 
+    - Imagine each recursive call as placing a book on a stack. Once the base case is met, the books (calls) are removed one by one as the function returns from each level.
+    - Example of a call stack for `factorial(3)`:
+       
+      ```
+       factorial(3)
+       --> factorial(2)
+           --> factorial(1)
+               --> factorial(0) --> returns 1
+               <-- factorial(1) returns 1 * 1 = 1
+           <-- factorial(2) returns 2 * 1 = 2
+       <-- factorial(3) returns 3 * 2 = 6
+       ```
+
+  - This process is what allows recursion to work effectively, as each recursive call’s state is preserved until it completes.
+
+# 4. **Stack Overflow**:
+  - **Definition**: A stack overflow occurs when there are too many function calls placed on the call stack, exceeding the memory capacity.
+  - **Causes**: 
+    - The primary cause is a recursive function that lacks a proper base case or one where the base case is never reached due to incorrect logic.
+    - For example, if a function calls itself with the same or increasing arguments instead of reducing them, it would never reach the base case, resulting in infinite recursion.
+  - **Example**:
+    - If the base case for a factorial function was incorrectly set, or if it was accidentally omitted, calling `factorial(5)` would cause the function to keep calling itself indefinitely:
+
+     ```cpp
+    int factorial(int n) {
+         // No proper base case leads to infinite recursion
+        return n * factorial(n - 1);
+    }
+     ```
+    - This code will continue calling `factorial` with decreasing values of `n`, but without a base case to return `1` when `n == 0`, it will eventually exhaust the stack space and result in a stack overflow.
+
