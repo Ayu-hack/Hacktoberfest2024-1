@@ -23,7 +23,7 @@ Run the script:
 python Password_Generator.py
 
 
-Follow the prompts to either generate a new password or strengthen an existing one.
+Follow the prompts to either generate a new password .
 
 ## Example
 
