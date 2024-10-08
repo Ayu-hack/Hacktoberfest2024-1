@@ -21,7 +21,10 @@ int binarySearchRecursive(int arr[], int left, int right, int target, int *count
 int main() {
     int size;
     printf("Enter the size of the sorted array: ");
-    scanf("%d", &size);
+    if (scanf("%d", &size) != 1 || size <= 0) {
+        printf("Invalid input for size. Please enter a positive integer.\n");
+        return 1; 
+    }
 
     int array[size];
     printf("Enter %d elements in sorted order for the array:\n", size);
