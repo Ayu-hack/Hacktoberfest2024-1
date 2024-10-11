@@ -1,42 +1,34 @@
-#include <iostream>
+// C++ program for the implementation of Bubble sort
+#include <bits/stdc++.h>
 using namespace std;
 
-void inputArray(int arr[], int n)
-{
-  for (int i = 0; i < n; i++)
-  {
-    cin >> arr[i];
-  }
-}
+void bubbleSort(vector<int>& v) {
+    int n = v.size();
 
-int main()
-{
-  int n;
-  cout << "Enter the number of element:" << endl;
-  cin >> n;
+    // Outer loop that corresponds to the number of
+    // elements to be sorted
+    for (int i = 0; i < n - 1; i++) {
 
-  int arr[n];
-  inputArray(arr, n);
-
-  // bubble sort
-  int i, j, temp;
-  for (i = (n - 1); i >= 0; i--)
-  {
-    for (j = 1; j <= i; j++)
-    {
-      if (arr[j - 1] > arr[j])
-      {
-        temp = arr[j - 1];
-        arr[j - 1] = arr[j];
-        arr[j] = temp;
-      }
+        // Last i elements are already
+        // in place
+        for (int j = 0; j < n - i - 1; j++) {
+          
+              // Comparing adjacent elements
+            if (v[j] > v[j + 1])
+              
+                  // Swapping if in the wrong order
+                swap(v[j], v[j + 1]);
+        }
     }
-  }
-
-  // printing the sorted array
-  cout << "Sorted array using Bubble Sort" << endl;
-  for (int i = 0; i < n; i++)
-  {
-    cout << arr[i] << " ";
-  }
 }
+
+int main() {
+    vector<int> v = {5, 1, 4, 2, 8};
+
+    // Sorting the vector v
+    bubbleSort(v);
+    for (auto i : v)
+        cout << i << " ";
+    return 0;
+}
+
