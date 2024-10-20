@@ -1,0 +1,26 @@
+def kg_to_lbs(kg):
+    return kg * 2.20462
+
+def lbs_to_kg(lbs):
+    return lbs / 2.20462
+
+def main():
+    print("Weight Calculator")
+    print("1. Kilograms to Pounds")
+    print("2. Pounds to Kilograms")
+    
+    choice = input("Enter your choice (1 or 2): ")
+    
+    if choice == '1':
+        kg = float(input("Enter weight in kilograms: "))
+        lbs = kg_to_lbs(kg)
+        print(f"{kg} kg is equal to {lbs:.2f} lbs")
+    elif choice == '2':
+        lbs = float(input("Enter weight in pounds: "))
+        kg = lbs_to_kg(lbs)
+        print(f"{lbs} lbs is equal to {kg:.2f} kg")
+    else:
+        print("Invalid choice. Please enter 1 or 2.")
+
+if __name__ == "__main__":
+    main()
