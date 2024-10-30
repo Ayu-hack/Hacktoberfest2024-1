@@ -1,30 +1,32 @@
-def isPalindrome(str,rev_str):
-    x = str == rev_str
-    return x
+def is_palindrome(s):
+    return s == s[::-1]
 
-while True:
-    try:
-        choice = int(input("Press the number corresponding to the option to select it\n0.\tExit\n1.\tCheck for Palindrome\n"))
+def main():
+    while True:
+        try:
+            print("Press the number corresponding to the option to select it")
+            print("0. Exit")
+            print("1. Check for Palindrome")
+            choice = int(input("Your choice: "))
 
-        if choice == 1:
-            string = input("Enter the string you want to check: ")
-            low_str = string.lower()
-            rev_str = low_str[-1::-1]
+            if choice == 1:
+                string = input("Enter the string you want to check: ").lower()
 
-            result = isPalindrome(low_str,rev_str)
-            if result == True:
-                print(f"\n{string} is a palindrome!")
-            elif result == False:
-                print(f"\n{string} is not a palindrome as it spells {rev_str} when reversed.")
+                if is_palindrome(string):
+                    print(f"\n{string} is a palindrome!\n")
+                else:
+                    reversed_string = string[::-1]
+                    print(f"\n{string} is not a palindrome as it spells {reversed_string} when reversed.\n")
+
+            elif choice == 0:
+                print("\n#################### Thank you for using my program ####################\n")
+                break
+
             else:
-                print("invalid input")
+                print("\nInvalid input. Please enter 0 or 1.\n")
 
-        elif choice == 0:
-            print("\n####################\tThank you for using my program\t####################")
-            break
-        else:
-            print("\nInvalid input")
+        except ValueError:
+            print("\nEnter an integer value corresponding to your choice!\n")
 
-    except:
-        print("\nEnter an integer value corresponding to your choice!")
-        
+if __name__ == "__main__":
+    main()
